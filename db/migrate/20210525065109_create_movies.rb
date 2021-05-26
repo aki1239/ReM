@@ -6,6 +6,7 @@ class CreateMovies < ActiveRecord::Migration[6.0]
       t.integer   :genre_id,  null: false
       t.string    :phrase,    null: false
       t.integer   :user_id,   foreign_key: true, null: false
+      t.text :image
       t.timestamps
     end
   end

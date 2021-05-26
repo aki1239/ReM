@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_05_25_065109) do
     t.integer "genre_id", null: false
     t.string "phrase", null: false
     t.integer "user_id", null: false
+    t.text "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
