@@ -1,0 +1,26 @@
+<div class='title-contents'>
+  
+
+
+
+    <p class='service-explain'>
+      映画アプリです
+    </p>
+    </div>
+
+
+<div class="contents row">
+  <% @movies.each do |movie| %>
+    <div class="content_post" style="background-image: url(<%= movie.image %>);">
+      <p><%= movie.text %></p>
+      <span class="name">
+        <%= movie.title %>
+      </span>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to(new_movie_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>記録する</span>
+  <%= image_tag 'movie.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
