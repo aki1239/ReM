@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
     <title>ReM</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-    <%= yield %>
-  </body>
+<header class= 'top-page-header'>
+<div class="header-top-content">
+  <%= link_to root_path, class:"header-title" do %>
+    <div>ReM</div>
+      <div class="header-sub-title">素晴らしい作品を忘れないうちに</div>
+      <%end%>
+
+      <div class='nav'>
+    <ul class='list-right'>
+    <% if user_signed_in? %>
+      <%= current_user.nickname %>さん
+        <li><%= link_to "マイページ", "/users/#{current_user.id}", class: "user-nickname" %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"logout" %></li>
+          <% else %>
+          <li><%= link_to 'ログイン', new_user_session_path, class:"sign-in"%></li>
+          <li><%= link_to '新規登録', new_user_registration_path, class:"sign-up"%></li>
+        
+    <% end %>
+    </ul>
+  </div>
+</div>
+</header>
+
+
+<body>
+
+ <%= yield %>
+
+</body>
+
+<footer>
+　　<ul class="footer-menu">
+     <li>home ｜</li>
+     <li>about ｜</li>
+     <li>service ｜</li>
+     <li>Contact Us</li>
+    </ul>
+    <p>© All rights reserved by webcampnavi.</p>
+</footer>
+
+
+
 </html>
