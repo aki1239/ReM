@@ -1,24 +1,36 @@
 <div class='title-contents'>
-  
-
-
-
-    <p class='service-explain'>
-      映画アプリです
-    </p>
     </div>
 
 
-<div class="contents row">
-  <% @movies.each do |movie| %>
-    <div class="content_post" style="background-image: url(<%= movie.image %>);">
-      <p><%= movie.text %></p>
-      <span class="name">
-        <%= movie.title %>
-      </span>
-    </div>
-  <% end %>
-</div>
+
+
+
+
+
+<ul class='movie-lists'> 
+<%@movies.each do |movie| %>
+<li class="movie-contents"> 
+
+<div class="box-movie">
+ <div class='box-movie-image'>
+  <%= image_tag movie.image, size: '185x200',class: "movie-img" %>
+   </div>
+  <div class="box-movie-title">
+  <%= movie.title %>
+  </div>
+    <p class="box-movie-phrase">
+      <%= movie.phrase %>
+      </div>
+      </div>
+      
+   <%end%>
+</li>
+</ul>
+
+
+
+
+
 
 <%= link_to(new_movie_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>記録する</span>
