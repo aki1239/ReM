@@ -1,0 +1,39 @@
+<div class="box">
+  <div class="box-inner">
+    <h3>投稿する</h3>
+    <%= form_with(model: @movie, local: true) do |f| %>
+    <h4>投稿できるか</h4>
+    <div class="box-title">
+      <%= f.label :タイトル %><br />
+      <%= f.text_field :title, class:"title", placeholder: "" %>
+      </div>
+
+      <div class="box-genre">  
+      <%= f.label :ジャンル %><br />
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+      </div>
+
+      <div class="box-image">
+      <%= f.label :画像 %><br />
+      <%= f.file_field :image, class:"image", id:"movie-image" %>
+      </div>
+
+      <div class="box-phrase">
+      <%= f.label :キャッチフレーズ %><br />
+      <%= f.text_field :phrase, placeholder: "" %>
+      </div>
+
+      <div class="box-text">
+      <%= f.label :感想 %><br />
+      <%= f.text_area :text, class:"text", placeholder:"" %>
+      </div>
+
+      
+       <div class="box-send">
+      <%= f.submit "保存する" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+      
+    <% end %>
+  </div>
+</div>
