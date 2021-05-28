@@ -1,0 +1,58 @@
+<div class="movie-show">
+  <div class="movie-box">
+  <h2 class="name">
+  <%= @movie.title %>
+    </h2>
+    <div class="movie-img-content">
+    <%= image_tag @movie.image,class:"movie-box-img"%>
+    </div>
+    <% if user_signed_in? %>
+    <% if current_user.id == @movie.user_id %>
+    <%= link_to "映画の編集", root_path, class: "movie-red-btn" %>
+    <p class="or-text">or</p>
+    <%= link_to "削除", root_path, class:"movie-destroy" %>
+    <%end%>
+    <%end%>
+</div>
+    <div class="movie-explain-box">
+      <span><%= "映画について" %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-movie">投稿者</th>
+          <td class="detail-value"><%= @movie.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-movie">カテゴリー</th>
+          <td class="detail-value"><%= @movie.genre.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-movie">キャッチフレーズ</th>
+          <td class="detail-value"><%= @movie.phrase %></td>
+        </tr>
+        <tr>
+          <th class="detail-movie">映画の感想</th>
+          <td class="detail-value"><%= @movie.text %></td>
+
+      </tbody>
+    </table>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>

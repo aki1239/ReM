@@ -10,7 +10,7 @@
 <ul class='movie-lists'> 
 <%@movies.each do |movie| %>
 <li class="movie-contents"> 
-
+<%= link_to movie_path(movie.id) do %>
 <div class="box-movie">
  <div class='box-movie-image'>
   <%= image_tag movie.image, size: '185x200',class: "movie-img" %>
@@ -25,6 +25,7 @@
       
    <%end%>
 </li>
+<%end%>
 </ul>
 
 
