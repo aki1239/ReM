@@ -2,10 +2,10 @@
   <div class="box-inner">
     <h3>投稿する</h3>
     <%= form_with(model: @movie, local: true) do |f| %>
-    <h4>投稿できるか</h4>
+    
     <div class="box-title">
       <%= f.label :タイトル %><br />
-      <%= f.text_field :title, class:"title", placeholder: "" %>
+      <%= f.text_field :title, class:"title", autofocus: true, autocomplete: "title" %>
       </div>
 
       <div class="box-genre">  
