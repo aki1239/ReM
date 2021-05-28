@@ -8,9 +8,9 @@
     </div>
     <% if user_signed_in? %>
     <% if current_user.id == @movie.user_id %>
-    <%= link_to "映画の編集", root_path, class: "movie-red-btn" %>
+    <%= link_to "映画の編集", edit_movie_path(@movie.id), method: :get, class: "movie-red-btn" %>
     <p class="or-text">or</p>
-    <%= link_to "削除", root_path, class:"movie-destroy" %>
+    <%= link_to "削除", movie_path(@movie.id), method: :delete, class:"movie-destroy" %>
     <%end%>
     <%end%>
 </div>
