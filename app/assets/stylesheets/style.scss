@@ -21,14 +21,20 @@ h1,h3 {
   padding: 20px;
   
 }
-.movie-contents{
+.movie-contents{ //親//
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   padding: 10vh 0;
 }
-.movie-lists{
+
+.movie-lists{ //子//
+  width: 100vw;
   display: flex;
+  flex-wrap: wrap;
+  
 }
 .boxbox{
   height: 300px;
@@ -312,7 +318,7 @@ ul.footer-menu li {
   
   .detail-table {
     margin-bottom: 30px;
-    width: 100%;
+    width: 70%;
   }
   
   .detail-movie {

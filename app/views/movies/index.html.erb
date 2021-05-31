@@ -1,13 +1,7 @@
-<div class='title-contents'>
-    </div>
-
-
-
-
-
-
-
+<div class='movies-contents'>
+   </div>
 <ul class='movie-lists'> 
+<% if @movies.present? %> 
 
 <%@movies.each do |movie| %>
 <li class="movie-contents"> 
@@ -26,6 +20,11 @@
       
    <%end%>
 </li>
+<%end%>
+<%else%>
+<h4 class='nil'>
+映画を投稿してみよう
+</h4>
 <%end%>
 </ul>
 
