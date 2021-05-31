@@ -63,7 +63,7 @@ h1,h3 {
   padding-left: 2px;
   padding-bottom: 2px;
 }
-.box-nickname input[type="nickname"], .box-email input[type="email"], .box-password input[type="password"],.box-title input[type="title"],.box-phrase input[type="phrase"],.box-text input[type="text"] {
+.box-nickname input[type="nickname"], .box-email input[type="email"], .box-password input[type="password"],.box-title input[type="title"],.box-phrase input[type="phrase"] {
   border-style: none;
   box-sizing: border-box;
   width: 100%;
@@ -73,7 +73,12 @@ h1,h3 {
   border-radius: 3px;
   padding: 0 7px;
 }
-
+.box-text input[type="text"]{
+  width: 100%;
+}
+.text, .phrase, .title{
+  width: 100%;
+}
 
 .box-sign-up {
   margin-bottom: 26px;
