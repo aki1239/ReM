@@ -2,10 +2,10 @@
   <div class="box-inner">
     <h3>投稿する</h3>
     <%= form_with(model: @movie, local: true) do |f| %>
-    <h4>投稿できるか</h4>
+    
     <div class="box-title">
       <%= f.label :タイトル %><br />
-      <%= f.text_field :title, class:"title", placeholder: "" %>
+      <%= f.text_field :title, class:"title", autofocus: true, autocomplete: "title" %>
       </div>
 
       <div class="box-genre">  
@@ -20,7 +20,7 @@
 
       <div class="box-phrase">
       <%= f.label :キャッチフレーズ %><br />
-      <%= f.text_field :phrase, placeholder: "" %>
+      <%= f.text_field :phrase, class:"phrase", placeholder: "", autocomplete: "phrase" %>
       </div>
 
       <div class="box-text">
@@ -31,9 +31,15 @@
       
        <div class="box-send">
       <%= f.submit "保存する" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
       </div>
-      
     <% end %>
+<div class="movie-newser">
+<p><span>---</span> 戻りますか？ <span>---</span></p>
+<%=link_to 'もどる', root_path, class:"back-btn" %>
   </div>
+
+
+  </div>
+</div>
+<div class="boxbox">
 </div>
