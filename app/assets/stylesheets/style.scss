@@ -15,23 +15,25 @@ h1,h3 {
 }
 
 .box-movie{
- 
+  //background-color: greenyellow;
   border: 1px #ddd solid;
-  margin: 20px;
-  padding: 20px;
+  margin: 20px 20px 40px 20px;
+  width: 100%; //calc((100% - 10px) / 3);
+  padding: 20px ;
   
 }
 .movie-contents{ //親//
- 
+  //background-color: rgb(110, 128, 83);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 10vh 0;
+  padding: 5vh 25px;
 }
 
 .movie-lists{ //子//
-  width: 100vw;
+  //background-color: rgb(90, 146, 7);
+  //width: 100vw;
   display: flex;
   flex-wrap: wrap;
   
