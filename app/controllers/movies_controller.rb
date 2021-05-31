@@ -1,10 +1,16 @@
 class MoviesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit]
-  
+  before_action :authenticate_user!
+  before_action :baria_user, only: [:edit, :destroy, :update]
   
   
   def index
-    @movies = Movie.all
+    @user = current_user
+    @movies = Movie.where(user_id: @user.id)
+    @movie1 = Movie.where(user_id: @user.id, category: "アクション")
+    @movie2 = Movie.where(user_id: @user.id, category: "SF")
+
+
+
   end
   def new
     @movie = Movie.new
@@ -51,8 +57,15 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:image, :title, :text, :phrase, :genre_id).merge(user_id: current_user.id)
-                                 
+    params.require(:movie).permit(:image, :title, :text, :phrase, :genre_id).merge(user_id: current_user.id)                      
   end
-  
+
+  def baria_user
+    unless Movie.find(params[:id]).user.id.to_i == current_user.id
+        redirect_to root_path(current_user)
+    end
+  end
+
+
+
 end

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta charset="UTF-8">
     <title>ReM</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -18,7 +19,7 @@
     <ul class='list-right'>
     <% if user_signed_in? %>
       <%= current_user.nickname %>さん
-        <li><%= link_to "マイページ", "/users/#{current_user.id}", class: "user-nickname" %></li>
+        <li><%= link_to "マイページ", root_path, class: "user-nickname" %></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"logout" %></li>
           <% else %>
           <li><%= link_to 'ログイン', new_user_session_path, class:"sign-in"%></li>
