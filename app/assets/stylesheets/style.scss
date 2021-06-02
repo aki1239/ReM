@@ -23,7 +23,7 @@ h1,h3 {
   
 }
 .movie-contents{ //親//
-  //background-color: rgb(110, 128, 83);
+  //background-color: rgb(93, 97, 87);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -311,6 +311,15 @@ ul.footer-menu li {
     text-align: right;
     text-decoration: underline;
   }
+
+  .movie-img{
+  padding: 0 auto;
+  margin: 0 auto;
+  }
+
+  .box-movie-image{
+    display: flex;
+  }
   /* 映画の概要 */
   .movie-explain-box {
     font-size: 18px;
@@ -392,4 +401,17 @@ ul.footer-menu li {
   color: black;
   margin: 20px 0px;
   padding: 2vh 10vw;
+}
+.box-movie-title {
+  text-align: center;
+  
+}
+
+.box-movie-phrase {
+ text-align: center;
+ 
+}
+
+.link{
+  text-decoration: none;
 }
