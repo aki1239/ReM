@@ -8,8 +8,9 @@ class MoviesController < ApplicationController
     @movies = Movie.where(user_id: @user.id)
     @movie1 = Movie.where(user_id: @user.id, category: "アクション")
     @movie2 = Movie.where(user_id: @user.id, category: "SF")
-
-
+    
+    
+    
 
   end
   def new
@@ -26,6 +27,7 @@ class MoviesController < ApplicationController
   end
   def show
     @movie = Movie.find(params[:id])
+    gon.movie = @movie
   end
 
   def edit

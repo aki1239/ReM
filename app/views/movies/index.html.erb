@@ -6,30 +6,28 @@
 <%@movies.each do |movie| %>
 <li class="movie-contents"> 
   <%= link_to movie_path(movie.id), class:"link"  do %>
-   <!--<div class="box-movie">-->
       <div class="box-movie-image">
         <%= image_tag movie.image, size: '200x210',class: "movie-img" %>
       </div>
-     
-     <!--<div class="box-movie-phrase">
-        <%= movie.phrase %>
-     </div>-->
-   <!--</div>-->
-<div class="box-movie-title">
+      <div class="box-movie-title">
        <%= movie.title %>
-     </div>
+     　</div>
    <%end%>
-   <div class="btn-square"  id="test">ReM</div>
-   <!--<%input{name: "movie_phrase", type: "hidden", value: movie.phrase, class: 'movie-phrase' }%>-->
+   
+  
     
 </li>
 <%end%>
 <%else%>
-<h4 class='nil'>
-映画を投稿してみよう！
-</h4>
+<div>
+<p class='nil'>
+映画を記録してみよう！
+</p>
+<p>
+映画を記録したらここに表示されるよ
+</p>
+</div>
 <%end%>
-</ul>
 
 
 
