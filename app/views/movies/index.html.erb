@@ -5,18 +5,19 @@
 
 <%@movies.each do |movie| %>
 <li class="movie-contents"> 
-<%= link_to movie_path(movie.id) do %>
-<div class="box-movie">
- <div class='box-movie-image'>
-  <%= image_tag movie.image, size: '185x200',class: "movie-img" %>
+  <%= link_to movie_path(movie.id), class:"link"  do %>
+   <div class="box-movie">
+      <div class="box-movie-image">
+        <%= image_tag movie.image, size: '185x200',class: "movie-img" %>
+      </div>
+     <div class="box-movie-title">
+       <%= movie.title %>
+     </div>
+     <div class="box-movie-phrase">
+        <%= movie.phrase %>
+     </div>
    </div>
-  <div class="box-movie-title">
-  <%= movie.title %>
-  </div>
-    <p class="box-movie-phrase">
-      <%= movie.phrase %>
-      </div>
-      </div>
+  
       
    <%end%>
 </li>
