@@ -6,20 +6,22 @@
 <%@movies.each do |movie| %>
 <li class="movie-contents"> 
   <%= link_to movie_path(movie.id), class:"link"  do %>
-   <div class="box-movie">
+   <!--<div class="box-movie">-->
       <div class="box-movie-image">
-        <%= image_tag movie.image, size: '185x200',class: "movie-img" %>
+        <%= image_tag movie.image, size: '200x210',class: "movie-img" %>
       </div>
-     <div class="box-movie-title">
+     
+     <!--<div class="box-movie-phrase">
+        <%= movie.phrase %>
+     </div>-->
+   <!--</div>-->
+<div class="box-movie-title">
        <%= movie.title %>
      </div>
-     <div class="box-movie-phrase">
-        <%= movie.phrase %>
-     </div>
-   </div>
-  
-      
    <%end%>
+   <div class="btn-square"  id="test">ReM</div>
+   <!--<%input{name: "movie_phrase", type: "hidden", value: movie.phrase, class: 'movie-phrase' }%>-->
+    
 </li>
 <%end%>
 <%else%>
@@ -36,5 +38,7 @@
 
 <%= link_to(new_movie_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>記録する</span>
-  <%= image_tag 'movie.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  <%= image_tag 'movie.png' , size: '185x210' ,class: "purchase-btn-icon" %>
 <% end %>
+<div class="boxbox">
+</div>
