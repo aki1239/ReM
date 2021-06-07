@@ -1,0 +1,26 @@
+<ul class='movie-lists'> 
+
+
+<%@movies_genre.each do |movie| %>
+<li class="movie-contents"> 
+<%= link_to root_path,class:"genre-link" do %>
+<%= movie.genre.name %>
+<%end%>
+
+
+  <%= link_to movie_path(movie.id), class:"link"  do %>
+      <div class="box-movie-image">
+        <%= image_tag movie.image, size: '200x210',class: "movie-img" %>
+      </div>
+      <div class="box-movie-title">
+       <%= movie.title %>
+     </div>
+   <%end%>  
+</li>
+
+  <%end%>
+  
+
+  </ul>
+  <div class="boxbox">
+  </div>

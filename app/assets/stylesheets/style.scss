@@ -289,7 +289,7 @@ ul.footer-menu li {
 
   /*一覧ページ*/
   .movie-contents {
-    width: calc((100% - 50px) / 3);
+    //width: calc((100% - 50px) / 3);
     margin-bottom: 40px;
   }
   
@@ -307,13 +307,14 @@ ul.footer-menu li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 5vh 25px;
+    left: 10px;
   }
   
   .movie-lists{ //背景//
     //background-color: rgb(90, 146, 7);
-    //width: 100vw;
+    width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -437,4 +438,12 @@ ul.footer-menu li {
 .nil{
   color: #d27d00;
   align-items: center;
+}
+.dis, .hide{
+  height: 50px;
+  width: 50px;
+}
+.mov{
+  height: 100px;
+  width: 100px;
 }

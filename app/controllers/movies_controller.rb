@@ -5,11 +5,14 @@ class MoviesController < ApplicationController
   
   def index
     @user = current_user
+
     @movies = Movie.where(user_id: @user.id)
-    @movie1 = Movie.where(user_id: @user.id, category: "アクション")
-    @movie2 = Movie.where(user_id: @user.id, category: "SF")
+    #@movie1 = Movie.where(user_id: @user.id, genre_name: "アクション")
+    #@movie2 = Movie.where(user_id: @user.id, genre_name: "SF")
+
     
-    
+    @genres = Genre.all
+    #gon.genre = @genres
     
 
   end
@@ -50,7 +53,13 @@ class MoviesController < ApplicationController
       end
     end
   
+def genre
+  genre_id = params[:genre_id]
+  @genre = Genre.find_by(id: genre_id)
 
+  @movies_genre = Movie.where(genre_id: @genre)
+  binding.pry
+end
 
 
 
@@ -60,6 +69,10 @@ class MoviesController < ApplicationController
 
   def movie_params
     params.require(:movie).permit(:image, :title, :text, :phrase, :genre_id).merge(user_id: current_user.id)                      
+  end
+
+  def genre_params
+    params.rewuire(:genre).permit(:id)
   end
 
   def baria_user

@@ -1,35 +1,54 @@
-<div class='movies-contents'>
-   </div>
 <ul class='movie-lists'> 
-<% if @movies.present? %> 
+ <div class='movies-contents'>
+   <%#="ジャンル一覧"%>
+   <%@genres.each do |genre|%>
+   <%genre.name%>
 
-<%@movies.each do |movie| %>
-<li class="movie-contents"> 
+    
+    
+      
+    
+      <%end%>
+  </div>
+
+
+
+    <% if @movies.present? %> 
+
+    <%@movies.each do |movie| %>
+    <li class="movie-contents"> 
+    <%= link_to genre_movie_path(movie.genre_id) do %>
+    <%= movie.genre.name %>
+    <%end%>
+
+
   <%= link_to movie_path(movie.id), class:"link"  do %>
       <div class="box-movie-image">
         <%= image_tag movie.image, size: '200x210',class: "movie-img" %>
       </div>
       <div class="box-movie-title">
        <%= movie.title %>
-     　</div>
-   <%end%>
-   
-  
-    
+     </div>
+   <%end%>  
 </li>
-<%end%>
-<%else%>
-<div>
-<p class='nil'>
-映画を記録してみよう！テスト
-</p>
-<p>
-映画を記録したらここに表示されるよ
-</p>
-</div>
-<%end%>
+
+  <%end%>
+  <div class="boxbox">
+  </div>
 
 
+    <%else%>
+    <div>
+    <p class='nil'>
+    映画を記録してみよう！テスト
+    </p>
+    <p>
+    映画を記録したらここに表示されるよ
+    </p>
+  </div>
+  <%end%>
+
+</ul>
 
 
 
@@ -38,5 +57,3 @@
   <span class='purchase-btn-text'>記録する</span>
   <%= image_tag 'movie.png' , size: '185x210' ,class: "purchase-btn-icon" %>
 <% end %>
-<div class="boxbox">
-</div>
