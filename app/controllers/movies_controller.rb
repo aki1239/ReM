@@ -1,16 +1,11 @@
 class MoviesController < ApplicationController
   before_action :authenticate_user!
   before_action :baria_user, only: [:edit, :destroy, :update]
-  
+  before_action :search_genre_movie, only: [:index, :genre, :show]
   
   def index
     @user = current_user
-    @movies = Movie.where(user_id: @user.id)
-    @movie1 = Movie.where(user_id: @user.id, category: "アクション")
-    @movie2 = Movie.where(user_id: @user.id, category: "SF")
-    
-    
-    
+    @movies = Movie.where(user_id: @user.id)    
 
   end
   def new
@@ -52,6 +47,15 @@ class MoviesController < ApplicationController
   
 
 
+    def genre
+      @movies = @q.result
+      
+      genre_id = params[:q][:genre_id_eq]
+      
+      @genre = Genre.find_by(id: genre_id)
+      #@movies = Movie.where(genre_id: @genre)
+    end
+
 
 
 
@@ -69,5 +73,10 @@ class MoviesController < ApplicationController
   end
 
 
+  
+
+  def search_genre_movie
+    @q = Movie.ransack(params[:q])
+  end
 
 end
