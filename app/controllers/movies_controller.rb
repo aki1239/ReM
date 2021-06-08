@@ -5,8 +5,7 @@ class MoviesController < ApplicationController
   
   def index
     @user = current_user
-    @movies = Movie.where(user_id: @user.id)    
-
+    @movies = Movie.where(user_id: @user.id)
   end
   def new
     @movie = Movie.new
@@ -48,12 +47,9 @@ class MoviesController < ApplicationController
 
 
     def genre
-      @movies = @q.result
-      
+      @movies = @q.result 
       genre_id = params[:q][:genre_id_eq]
-      
       @genre = Genre.find_by(id: genre_id)
-      #@movies = Movie.where(genre_id: @genre)
     end
 
 
