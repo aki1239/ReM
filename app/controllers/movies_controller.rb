@@ -61,7 +61,7 @@ class MoviesController < ApplicationController
         redirect_to root_path(current_user)
     end
   end
-  
+
   def search_genre_movie
     @q = Movie.ransack(params[:q])
   end

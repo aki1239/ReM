@@ -5,7 +5,9 @@
   <% end %>
 </div>
   <ul class='movie-lists'> 
+
     <%@movies.each do |movie| %>
+    <% if current_user.id == movie.user_id %>
       <li class="movie-contents"> 
         <div class="box-movie-genre">
          <%=movie.genre.name%>
@@ -19,6 +21,7 @@
         </div>
        <%end%>    
      </li>
+     <%end%>
   <%end%>
  </ul>
 <div class="boxbox">
