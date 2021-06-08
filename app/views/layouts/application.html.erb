@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-<%= include_gon %>
+   <%= include_gon %>
 
     <%= stylesheet_link_tag 'application', media: 'all'  %>
     <%= javascript_pack_tag 'application'  %>
@@ -44,9 +44,13 @@
 </body>
 
 <footer>
-　　<ul class="footer-menu">
-    <h10>映画を記録したら詳細ページでReMボタンを押してください。</h10>
-    <h11>2秒後にアラートが出ます。</h11>
+<ul class="footer-menu">
+    <div>
+    <p>映画を記録したら作品をクリックし、詳細ページでReMボタンを押してください。</p>
+    <p>2秒後にクイズ形式のアラートが出ます。</p>
+    <p>アラートが出たら質問に答えてくだい。</p>
+
+    </div>
 </footer>
 
 

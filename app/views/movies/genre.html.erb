@@ -1,26 +1,25 @@
-<!--<h2>カテゴリー <%= @genre.name %></h2>
-  <ul>
-    <% @movies.each do |movie| %>
-      <li>
-          <%= image_tag movie.image if movie.image.attached? %>
-      </li>
-    <% end %>
-  </ul>
-</div>-->
+<div class='genre'>
+      <%= search_form_for @q, url: movie_genre_path  do |f| %>
+       <%= f.collection_select :genre_id_eq, Genre.where.not(id: 0), :id, :name, include_blank: "ジャンル検索" %>
+       <%= f.submit '検索' %>
+      <% end %>
+   </div>
 <ul class='movie-lists'> 
 <%@movies.each do |movie| %>
 <li class="movie-contents"> 
-  <%= link_to root_path, class:"link"  do %>
+<div class="box-movie-genre">
+<%=movie.genre.name%>
+</div>
+  <%= link_to movie_path(movie.id), class:"link"  do %>
       <div class="box-movie-image">
         <%= image_tag movie.image, size: '200x210',class: "movie-img" %>
       </div>
       <div class="box-movie-title">
        <%= movie.title %>
       </div>
-   <%end%>
-   
-  
-    
+   <%end%>  
 </li>
 <%end%>
 </ul>
+<div class="boxbox">
+</div>
