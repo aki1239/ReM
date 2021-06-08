@@ -43,18 +43,12 @@ class MoviesController < ApplicationController
         redirect_to root_path
       end
     end
-  
-
 
     def genre
       @movies = @q.result 
       genre_id = params[:q][:genre_id_eq]
       @genre = Genre.find_by(id: genre_id)
     end
-
-
-
-
 
   private
 
@@ -67,10 +61,7 @@ class MoviesController < ApplicationController
         redirect_to root_path(current_user)
     end
   end
-
-
   
-
   def search_genre_movie
     @q = Movie.ransack(params[:q])
   end

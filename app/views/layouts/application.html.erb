@@ -4,55 +4,41 @@
     <title>ReM</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-   <%= include_gon %>
-
+    <%= include_gon %>
     <%= stylesheet_link_tag 'application', media: 'all'  %>
     <%= javascript_pack_tag 'application'  %>
 
-<header class= 'top-page-header'>
-<div class="header-top-content">
-  <%= link_to root_path, class:"header-title" do %>
-    <div>ReM</div>
-      <div class="header-sub-title">お気に入りの作品を忘れないように</div>
-      <%end%>
+   <header class= 'top-page-header'>
+      <div class="header-top-content">
+          <%= link_to root_path, class:"header-title" do %>
+             <div>ReM</div>
+             <div class="header-sub-title">お気に入りの作品を忘れないように</div>
+           <%end%>
 
+              <div class='nav'>
+               <ul class='list-right'>
+                 <% if user_signed_in? %>
+                    <%= current_user.nickname %>さん
+                      <li><%= link_to "マイページ", root_path, class: "user-nickname" %></li>
+                      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"logout" %></li>
+                 <% else %>
+                      <li><%= link_to 'ログイン', new_user_session_path, class:"sign-in"%></li>
+                      <li><%= link_to '新規登録', new_user_registration_path, class:"sign-up"%></li> 
+                  <% end %>
+                </ul>
+              </div>
+       </div>
+    </header>
+    <body>
+      <%= yield %>
+    </body>
 
-
-      <div class='nav'>
-    <ul class='list-right'>
-    <% if user_signed_in? %>
-      <%= current_user.nickname %>さん
-        <li><%= link_to "マイページ", root_path, class: "user-nickname" %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"logout" %></li>
-          <% else %>
-          <li><%= link_to 'ログイン', new_user_session_path, class:"sign-in"%></li>
-          <li><%= link_to '新規登録', new_user_registration_path, class:"sign-up"%></li>
-        
-    <% end %>
-    </ul>
-  </div>
-</div>
-
-</header>
-
-
-<body>
-
- <%= yield %>
-
-</body>
-
-<footer>
-<ul class="footer-menu">
-    <div>
-    <p>映画を記録したら作品をクリックし、詳細ページでReMボタンを押してください。</p>
-    <p>2秒後にクイズ形式のアラートが出ます。</p>
-    <p>アラートが出たら質問に答えてくだい。</p>
-
-    </div>
-</footer>
-
-
-
+    <footer>
+       <ul class="footer-menu">
+         <div>
+            <p>映画を記録したら作品をクリックし、詳細ページでReMボタンを押してください。</p>
+            <p>2秒後にクイズ形式のアラートが出ます。</p>
+            <p>アラートが出たら質問に答えてくだい。</p>
+          </div>
+     </footer>
 </html>

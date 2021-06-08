@@ -62,3 +62,4 @@ gem 'image_processing', '~> 1.2'
 gem 'gon'
 gem 'ransack'
 gem 'pry-rails'
+gem 'rubocop', require: false
