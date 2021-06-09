@@ -42,6 +42,15 @@
 [![Image from Gyazo](https://i.gyazo.com/5c62794bfd8f7e4bd429b752852b5f9e.jpg)](https://gyazo.com/5c62794bfd8f7e4bd429b752852b5f9e)
 
 
+# ER図
+[![Image from Gyazo](https://i.gyazo.com/3e90d92ddcb2e1639c8406e1751279b0.png)](https://gyazo.com/3e90d92ddcb2e1639c8406e1751279b0)
+
+# 今後実装予定の機能
+## 星機能
+作品の情報を入力する際に５段階の星の評価を設定し、一覧ページや詳細ページで表示させる機能
+## 正答率表示機能
+リマインド機能での正答率を内部で記録させ、正答率を表示させる機能
+
 
 
 
