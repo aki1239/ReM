@@ -1,33 +1,8 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 # アプリケーション名
 ## ReM
 鑑賞した映画を記録し、記録した内容を再度思い出すことで記憶力向上も期待できるアプリケーションです。
 
-## アプリケーション概要
+# アプリケーション概要
 アプリURL: http://rem-35563.herokuapp.com/<br>
 ベーシック認証: user⇨syo    password⇨2222. <br>
 新しくアカウントを作成することでトップページへ遷移することができます。<br>
