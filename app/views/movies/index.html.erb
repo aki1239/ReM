@@ -1,4 +1,5 @@
 <div class='genre'>
+
   <% if @movies.present? %> 
   <%= search_form_for @q, url: movie_genre_path  do |f| %>
     <%= f.collection_select :genre_id_eq, Genre.where.not(id: 1), :id, :name, include_blank: "ジャンル検索" %>
